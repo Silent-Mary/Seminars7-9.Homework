@@ -68,7 +68,7 @@ int colIndex = Convert.ToInt32(Console.ReadLine());
 
 int[,] userMatrix = GetRandomMatrix(rows, columns, min, max);
 Console.Clear();
-Console.ForegroundColor = ConsoleColor.Blue;
+Console.ForegroundColor = ConsoleColor.Cyan;
 PrintMatrix(userMatrix);
 Console.WriteLine();
 GetMatrixElement(userMatrix, rowIndex, colIndex);
