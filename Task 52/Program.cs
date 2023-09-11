@@ -41,6 +41,26 @@ void PrintMatrix(int[,] matrixToPrint)
     }
 }
 
+void GetColumnMean(int[,] matrix)
+{
+    double mean = 0;
+    int rows = matrix.GetLength(0);
+    int columns = matrix.GetLength(1);
+
+    Console.ForegroundColor = ConsoleColor.Cyan;
+    System.Console.Write($"Mean:\t");
+
+    for (int i = 0; i < columns; i++)
+    {
+        for (int j = 0; j < rows; j++)
+        {
+            mean += matrix[j, i];
+        }
+        System.Console.Write($"{Math.Round(mean / rows, 2)}\t");
+        mean = 0;
+    }
+}
+
 Console.WriteLine("Enter N of rows, N of columns, min N & max N for range: ");
 int rows = Convert.ToInt32(Console.ReadLine());
 int columns = Convert.ToInt32(Console.ReadLine());
@@ -51,4 +71,8 @@ int[,] userMatrix = GetRandomMatrix(rows, columns, min, max);
 Console.Clear();
 Console.ForegroundColor = ConsoleColor.Green;
 PrintMatrix(userMatrix);
+Console.WriteLine();
+GetColumnMean(userMatrix);
 Console.ForegroundColor = ConsoleColor.White;
+Console.WriteLine();
+Console.WriteLine();
